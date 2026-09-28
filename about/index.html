@@ -1,0 +1,35 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><script>(function(){try{var e=localStorage.getItem("wtk-theme");e!=="dark"&&e!=="light"&&(e=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),document.documentElement.dataset.theme=e}catch{}})()</script><title>关于 · 武将收藏阁</title>
+<meta name=description content="青青子衿 悠悠我心 但為君故 沉吟至今"><meta property="og:url" content="https://wins-m.github.io/LTK/about/"><meta property="og:site_name" content="武将收藏阁"><meta property="og:title" content="关于"><meta property="og:description" content="这是什么 武将收藏阁 是一个用 Hugo 构建、托管在 GitHub Pages 上的静态站点， 用来管理与展示我的三国杀武将牌收藏。源码私有维护，不对外公开。
+每一名武将对应一个专有编号（如 WEI 001）——编号 = 势力前缀 + 三位序号， 按 魏 / 蜀 / 吴 / 群 / 神 五个主分区陈列，晋 / 西 / 魔 / 君 / 野 归入折叠的「其他」。 已收集的武将在卡片正面展示封面立绘，未收集的展示占位框；任一武将（无论是否收集） 只要有版本图鉴，都能点开灯箱查看其全部称号、扩展包与历年卡面。
+数据模型 站点是数据驱动的——所有信息存在 data/*.yml，构建时由模板渲染成卡片网格：
+势力表（factions.yml）：决定分区顺序与配色。 武将名册（generals.yml，roster）：完整的武将身份列表，描述「有哪些武将」， 与是否拥有无关。 已收集注册表（collection.yml）：出现在此即视为已收集。每个编号下可记多个版本 （不同称号），每个版本挂多张真实卡面（进灯箱）；编号级封面单独存，只作卡片正面。 版本图鉴（moegirl_versions.yml）：每名武将的全部称号 / 扩展包 / 年版卡面（图走萌娘 URL）， 灯箱据此展示完整图鉴并按注册表逐称号标「已收集 / 未收集」。 扩展包归属（general_packs.yml）：该武将出现过的全部扩展包，平铺为灯箱里的标签。 数据是怎么来的 三个互补的图源，由 scripts/ 下的脚本抓取、归一、入库：
+noname（推荐，可离线）：开源三国杀仓库，武将数据规整且自带卡面，用于建名册与补封面。 萌娘百科（默认 roster 源）：从纯编号表抓取官方编号矩阵， 并解析版本图鉴与扩展包归属。 fandom：备用的武将总表与卡面来源。 怎么用 # 抓取 / 更新武将名册（默认萌娘百科纯编号表） python scripts/fetch_roster."><meta property="og:locale" content="zh_cn"><meta property="og:type" content="website"><link rel=icon href=/LTK/img/favicon.svg type=image/svg+xml><link rel=stylesheet href=/LTK/css/style.466360e97a7fdc40601b57cd8720e30384f5763463c6465979fa227d36379cfc.css></head><body><header class=site-head><div class="container site-head__inner"><a class=site-head__brand href=/LTK/><span class=site-head__title>武将收藏阁</span>
+<span class=site-head__sub>General-Card Collection</span></a><nav class=site-nav><a class=site-nav__link href=/LTK/>全部</a>
+<a class=site-nav__link href=/LTK/packs/>扩展包</a>
+<a class=site-nav__link href=/LTK/timeline/>时间线</a>
+<a class=site-nav__link href=/LTK/register/>登记</a>
+<a class="site-nav__link is-active" href=/LTK/about/>关于</a></nav></div></header><main id=content><article class=prose><div class=container><h1 class=prose__title>关于</h1><h2 id=这是什么>这是什么</h2><p><strong>武将收藏阁</strong> 是一个用 <a href=https://gohugo.io/>Hugo</a> 构建、托管在 GitHub Pages 上的静态站点，
+用来管理与展示我的三国杀武将牌收藏。源码私有维护，不对外公开。</p><p>每一名武将对应一个<strong>专有编号</strong>（如 <code>WEI 001</code>）——编号 = 势力前缀 + 三位序号，
+按 <code>魏 / 蜀 / 吴 / 群 / 神</code> 五个主分区陈列，<code>晋 / 西 / 魔 / 君 / 野</code> 归入折叠的「其他」。
+已收集的武将在卡片正面展示<strong>封面立绘</strong>，未收集的展示占位框；任一武将（无论是否收集）
+只要有版本图鉴，都能点开<strong>灯箱</strong>查看其全部称号、扩展包与历年卡面。</p><h2 id=数据模型>数据模型</h2><p>站点是<strong>数据驱动</strong>的——所有信息存在 <code>data/*.yml</code>，构建时由模板渲染成卡片网格：</p><ul><li><strong>势力表</strong>（<code>factions.yml</code>）：决定分区顺序与配色。</li><li><strong>武将名册</strong>（<code>generals.yml</code>，roster）：完整的武将身份列表，描述「有哪些武将」，
+与是否拥有无关。</li><li><strong>已收集注册表</strong>（<code>collection.yml</code>）：出现在此即视为已收集。每个编号下可记多个<strong>版本</strong>
+（不同称号），每个版本挂多张<strong>真实卡面</strong>（进灯箱）；编号级<strong>封面</strong>单独存，只作卡片正面。</li><li><strong>版本图鉴</strong>（<code>moegirl_versions.yml</code>）：每名武将的全部称号 / 扩展包 / 年版卡面（图走萌娘 URL），
+灯箱据此展示完整图鉴并按注册表逐称号标「已收集 / 未收集」。</li><li><strong>扩展包归属</strong>（<code>general_packs.yml</code>）：该武将出现过的全部扩展包，平铺为灯箱里的标签。</li></ul><h2 id=数据是怎么来的>数据是怎么来的</h2><p>三个互补的图源，由 <code>scripts/</code> 下的脚本抓取、归一、入库：</p><ul><li><strong>noname</strong>（推荐，可离线）：开源三国杀仓库，武将数据规整且自带卡面，用于建名册与补封面。</li><li><strong>萌娘百科</strong>（默认 roster 源）：从<a href=https://zh.moegirl.org.cn/三国杀/武将战功%26编号表/纯编号表>纯编号表</a>抓取官方编号矩阵，
+并解析版本图鉴与扩展包归属。</li><li><strong>fandom</strong>：备用的武将总表与卡面来源。</li></ul><h2 id=怎么用>怎么用</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 抓取 / 更新武将名册（默认萌娘百科纯编号表）</span>
+</span></span><span style=display:flex><span>python scripts/fetch_roster.py
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 批量录入收藏状态（导出 → Excel 勾选 → 导入）</span>
+</span></span><span style=display:flex><span>python scripts/checklist.py --export
+</span></span><span style=display:flex><span>python scripts/checklist.py --import
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 或用站内「登记」页按称号录入、下载长表 收藏清单.csv 后导入（含首次获得日期）</span>
+</span></span><span style=display:flex><span>python scripts/checklist.py --import-long
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 手动登记卡面：默认进灯箱；--cover 设为编号封面（首页卡正面）</span>
+</span></span><span style=display:flex><span>python scripts/add_image.py <span style=color:#e6db74>&#34;WEI 001&#34;</span> ~/Downloads/曹操.jpg --title 魏武帝
+</span></span><span style=display:flex><span>python scripts/add_image.py <span style=color:#e6db74>&#34;QUN 900&#34;</span> ~/Pictures/杨玉环.jpeg --cover
+</span></span></code></pre></div><p>详见项目仓库（私有维护）的 <code>README.md</code>。</p></div></article></main><footer class=site-foot><div class=container><p>武将收藏阁 · 用 Hugo 构建 · 2026</p></div></footer><button id=theme-toggle class=theme-toggle type=button aria-label="切换深色 / 浅色模式" title="切换深色 / 浅色模式">
+<span class=theme-toggle__icon aria-hidden=true></span>
+</button>
+<script src=/LTK/js/app.dd2acf2b20fc0bc85baf6bee082f66140c5760d2fa337817dd01542366dce33c.js defer></script></body></html>
